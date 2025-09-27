@@ -50,3 +50,9 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+
+# Test outputs and sample data
+test_outputs/
+sample_data/
+test_*.yaml
+test_*.json
