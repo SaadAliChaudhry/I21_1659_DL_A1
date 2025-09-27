@@ -1,0 +1,32 @@
+# Sample configuration for testing
+dataset:
+  image_size: [224, 224]
+  num_landmarks: 68
+  emotions: ['anger', 'disgust', 'fear', 'happiness', 'sadness', 'surprise', 'neutral']
+  valence_range: [-1.0, 1.0]
+  arousal_range: [-1.0, 1.0]
+
+model:
+  backbone: 'resnet18'  # Use smaller model for faster training
+  num_emotion_classes: 7
+  dropout_rate: 0.3
+  pretrained: true
+
+training:
+  batch_size: 8  # Small batch size for testing
+  learning_rate: 0.001
+  num_epochs: 2  # Few epochs for testing
+  weight_decay: 0.0001
+  scheduler_step_size: 1
+  scheduler_gamma: 0.9
+
+data_augmentation:
+  horizontal_flip: 0.5
+  rotation_degrees: 15
+  brightness: 0.2
+  contrast: 0.2
+
+paths:
+  data_root: './sample_data'
+  model_save_dir: './test_checkpoints'
+  log_dir: './test_logs'
